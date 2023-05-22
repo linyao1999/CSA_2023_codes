@@ -1,0 +1,67 @@
+&SGS_TKE
+dosmagor = .true.
+/
+
+&MICRO_M2005
+/
+
+&PARAMETERS
+
+caseid ='CSA315K_1024x1x80_stagged_v1',
+
+nrestart = 0,
+nrestart_skip = 0, !write restarts every 12 stat outputs (except at the end of the run when restarts are written regardless of nrestart_skip).
+
+CEM = .true.,
+OCEAN = .true.,
+dosgs           = .true.,
+dodamping       = .true.,
+doupperbound    = .true.,
+docloud         = .true.,
+doprecip        = .true.,
+dolongwave      = .true.,
+doshortwave     = .true.,
+dosurface       = .true.,
+dosfchomo       = .false.,
+dolargescale    = .false.,
+doradforcing    = .false.,  !note that when this is true, you need two rads&radc files
+dosfcforcing    = .true.,  !keep forcing the SST=300K
+docoriolis      = .false.,
+donudging_uv    = .true.,
+donudging_tq    = .false.,
+doperpetual     = .true.,
+
+tauls = 7200.,
+
+SFC_FLX_FXD    = .false.,
+SFC_TAU_FXD    = .false.,
+
+dx =    2000.,
+dy =    2000.,
+dt =    10.,
+
+
+latitude0 = 0.,
+longitude0 = -23.5,
+nrad = 15, !frequency (in time step) of radiation computation (3-5 min should be ok)
+day0=0.0,
+
+nstop    = 8640,
+nprint   = 360,
+nstat    = 360,
+nstatfrq = 36,
+
+doSAMconditionals     = .true.
+dosatupdnconditionals = .true.
+
+nsave2D         = 360,
+nsave2Dstart    = 0,
+nsave2Dend      = 99999999,
+
+nsave3D         = 360,
+nsave3Dstart    = 0, 
+nsave3Dend      = 99999999,
+
+/
+
+
